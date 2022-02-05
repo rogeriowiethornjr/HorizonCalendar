@@ -18,8 +18,8 @@ import UIKit
 // MARK: - DayView
 
 /// A view that represents a day in the calendar.
-public final class DayView: UIView {
-
+public final class DayViewH: UIView {
+ 
   // MARK: Lifecycle
 
   public init(invariantViewProperties: InvariantViewProperties) {
@@ -182,7 +182,7 @@ public final class DayView: UIView {
 
 // MARK: Accessibility
 
-extension DayView {
+extension DayViewH {
 
   public override var isAccessibilityElement: Bool {
     get { true }
@@ -199,7 +199,7 @@ extension DayView {
 // MARK: UIPointerInteractionDelegate
 
 @available(iOS 13.4, *)
-extension DayView: UIPointerInteractionDelegate {
+extension DayViewH: UIPointerInteractionDelegate {
 
   public func pointerInteraction(
     _ interaction: UIPointerInteraction,
@@ -220,7 +220,7 @@ extension DayView: UIPointerInteractionDelegate {
 
 // MARK: - DayView.ViewModel
 
-extension DayView {
+extension DayViewH {
 
   /// Encapsulates the data used to populate a `DayView`'s text label. Use a `DateFormatter` to create the
   /// `accessibilityLabel` string.
@@ -252,7 +252,7 @@ extension DayView {
 
 // MARK: - DayView.InvariantViewProperties
 
-extension DayView {
+extension DayViewH {
 
   /// Encapsulates configurable properties that change the appearance and behavior of `DayView`. These cannot be changed after a
   /// `DayView` is initialized.
@@ -329,16 +329,16 @@ extension DayView {
 
 // MARK: - DayView + CalendarItemViewRepresentable
 
-extension DayView: CalendarItemViewRepresentable {
+extension DayViewH: CalendarItemViewRepresentable {
 
   public static func makeView(
     withInvariantViewProperties invariantViewProperties: InvariantViewProperties)
-    -> DayView
+    -> DayViewH
   {
-    DayView(invariantViewProperties: invariantViewProperties)
+    DayViewH(invariantViewProperties: invariantViewProperties)
   }
 
-  public static func setViewModel(_ viewModel: ViewModel, on view: DayView) {
+  public static func setViewModel(_ viewModel: ViewModel, on view: DayViewH) {
     view.setViewModel(viewModel)
   }
 
