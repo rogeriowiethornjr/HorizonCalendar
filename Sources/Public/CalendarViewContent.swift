@@ -89,7 +89,7 @@ public final class CalendarViewContent {
 
     dayItemProvider = { day in
       let date = calendar.startDate(of: day)
-      let itemModel = CalendarItemModel<DayView>(
+      let itemModel = CalendarItemModel<DayViewH>(
         invariantViewProperties: .baseNonInteractive,
         viewModel: .init(
           dayText: "\(day.day)",
